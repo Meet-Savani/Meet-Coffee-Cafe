@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet's Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="shortcut icon" href="Pic/m1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="media_query.css"> -->
+</head>
+<body>
+    
+    <div class="all-content">
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" id="logo">
+                <img src="Pic/logo.png" alt="Logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#reviews">Reviews</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#blogs">Blogs</a>
+                  </li>
+                </ul>
+
+          <div class="shopping position-relative">
+          <span><i class="fa-solid fa-shopping-cart fs-5 p-2 ms-2 text-white" id="cart-icon"></i></span>
+          <span class="quantity rounded-5 text-white position-absolute">8</span>
+          </div>
+
+          <div class="account" id="user-account">
+              <span><i class="fa-solid fa-user text-white fs-5 p-3" id="user-icon""></i></span>
+          </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="user-account position-fixed bg-white rounded-1" id="userAccount">
+      <button type="button" class="btn w-100 border-0 p-2 text-start" id="signInBtn">Sign In</button>
+      <button type="button" class="btn w-100 border-0 p-2 text-start" id="signUpBtn">Sign Up</button>
+    </div>
+
+  <div class="overlay position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-50 z-3" id="overlay"></div>
+
+  <!-- Shopping Cart -->
+
+  <div class="shopping-cart bg-black position-fixed rounded-1" id="shopping-cart">
+      <h1 class="bg-black bg-opacity-25 fs-4 text-white fw-bolder text-center border-bottom border-white rounded-3">Shopping Cart</h1>
+
+      <div class="items overflow-auto mt-4">
+
+      <div class="items-1 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m1.png" alt="Espresso Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Espresso Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$99</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-2 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m2.png" alt="Cappuccino Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Cappuccino Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$102</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-3 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m3.png" alt="Black Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Black Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$115</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-4 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m4.png" alt="Irish Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Irish Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$150</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-5 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m5.png" alt="Macchiato Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Macchiato Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$200</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-6 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m6.png" alt="Flat White Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Flat White Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$30</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-7 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m7.png" alt="Latte Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Latte Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$110</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      <div class="items-8 item-content d-flex justify-content-around align-items-center pb-1 rounded-1">
+        <div class="w-50 d-flex align-items-center">
+          <div>
+            <img src="Pic/m8.png" alt="Affogato  Coffee" class="rounded-5 mt-1">
+          </div>
+          <div class="ms-3">
+            <h3 class="mt-2 fs-6 text-white fw-bold">Affogato  Coffee</h3>
+          </div>
+        </div>
+          <h3 class="price mt-2 fs-6 text-white fw-semi-bold">$110</h3>
+          <div class="quantity-input w-25">
+              <span><i class="fa-solid fa-plus cart_icons mt-1 text-white"></i></i></span>
+              <input type="number" class="text-black mt-1" name="quantity_num" id="quantity_num_1" min="1" max="15" value="1" required>
+              <span><i class="fa-solid fa-minus cart_icons mt-1 text-white"></i></span>
+          </div>
+      </div>
+
+      </div>
+
+      <div class="sub-totals w-100 d-flex align-items-center justify-content-between text-white bg-black bg-opacity-75 position-absolute px-1 py-2">
+          <h2 class="fs-4">Subtotal : </h2>
+          <h2 class="fs-4" id="price">$450</h2>
+      </div>
+
+      <div class="buttons w-100 d-flex justify-content-evenly position-absolute pt-1">
+          <button class="fs-4 fw-semibold rounded-2" id="close-cart">Close</button>
+          <button class="fs-4 fw-semibold rounded-2" id="check-out">Check Out</button>
+      </div>
+  </div>
+
+  <!-- Sign-in Box -->
+
+    <div class="sign-in-box position-fixed top-50 start-50 rounded-4" id="signInBox">
+      <h2 class="bg-black bg-opacity-50 text-white fs-4 fw-semibold text-center rounded-5 mb-4">Sign-in</h2>
+      <div class="input-field d-flex flex-column">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+        <button type="submit" class="sign-in-btn fs-4 fw-semibold mt-3 mb-3 px-1 py-2 pointer-event">Sign-in</button>
+      </div>
+      <div class="footer-signin d-flex flex-row justify-content-between">
+        <div class="remember-me d-flex">
+          <input type="checkbox" name="remember-me" id="remember-me" class="mt-1 me-1">
+          <h4><a href="#" class="d-flex justify-content-center align-items-center">Remember Me</a></h4>
+        </div>
+        <div class="forget">
+          <h4><a href="#">Forgot Password</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign-up Box -->
+
+    <div class="sign-up-box position-fixed top-50 start-50 rounded-4" id="signUpBox">
+      <h2 class="bg-black bg-opacity-50 text-white fs-4 fw-semibold text-center rounded-5 mb-4">Sign-Up</h2>
+      <div class="input-field d-flex flex-column">
+          <label for="fullName">Full Name</label>
+          <input type="text" name="fulName" id="fullName" class="form-control" placeholder="Full Name" required>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+          <label for="password">Repeat Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+          <div class="terms d-flex">
+              <input type="checkbox" name="terms" class="mt-1 me-1">
+              <h4>I agree to the <span class="fw-semibold pointer-event">Terms of User</span></h4>
+          </div>
+          <button type="submit" class="sign-up-btn fs-4 fw-semibold mt-2 px-1 py-2 pointer-event">Sign-Up</button>
+      </div>
+    </div>
+
+
+  <!-- Home Section  -->
+  <section id="home">
+    <div class="content text-white">
+      <h3>Start Your Day With a <br>Fresh Coffee</h3>
+      <p>Coffee is a Popular and beloved Beverages enjoyed by 
+        <br>people around the World.
+      </p>
+      <button class="btn">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- About Section  -->
+
+  <section id="about">
+    <div class="container">
+      <div class="top-heading">About <span>Us</span></div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <img src="Pic/About.jpg" alt="About img">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h3>What Makes Our Coffee Special?</h3>
+          <p>There's a lot more to specialty coffee than meets the eye. If there's one thing it has going for it, it's the quality. You'll be shocked if you go to a coffee shop and watch a good, experienced barista at work.
+            <br><br> You'll note that the barista uses a scale to weigh the coffee beans, grinds them, and pours them using a special technique. Observing how a barista prepares a specialty coffee is one thing; experiencing the aroma and taste of the specialty coffee is quite another. Whatever you select, you'll experience something unlike any other, with its rich flavor notes and robust scent.</p>
+            <button class="btn">Learn More.</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section  -->
+
+  <section id="category">
+    <div class="container">
+      <div class="top-heading">Top <span>Categories</span></div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="Pic/Categories1.jpg" alt="Categories1">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="Pic/Categories2.jpg" alt="Categories2">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="Pic/Categories3.jpg" alt="Categories3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Menu Section  -->
+
+  <section id="menu">
+    <div class="container">
+      <div class="top-heading"><span>Menu</span></div>
+      <div class="row">
+        
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m1.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Espresso Coffee</h3>
+              <p>$99 <strike>$100</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m2.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+              </div>
+              <h3>Cappuccino Coffee</h3>
+              <p>$102 <strike>$110</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m3.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Black Coffee</h3>
+              <p>$115 <strike>$150</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m4.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Irish Coffee</h3>
+              <p>$150 <strike>$200</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m5.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Macchiato Coffee</h3>
+              <p>$200 <strike>$300</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m6.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Flat White Coffee</h3>
+              <p>$30 <strike>$50</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m7.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Latte Coffee</h3>
+              <p>$110 <strike>$250</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m8.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+              </div>
+              <h3>Affogato Coffee</h3>
+              <p>$110 <strike>$250</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m9.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+              </div>
+              <h3>Cold Brew Coffee</h3>
+              <p>$370 <strike>$500</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m10.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Cortado Coffee</h3>
+              <p>$150 <strike>$170</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m11.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Iced Coffee</h3>
+              <p>$111 <strike>$150</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-6">
+          <div class="card">
+            <img src="Pic/m12.png" alt="Coffee">
+            <div class="card-body">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+              </div>
+              <h3>Ristretto Coffee</h3>
+              <p>$149 <strike>$200</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Product Section  -->
+
+  <section id="product">
+    <div class="container text-center">
+      <div class="top-heading"><span>Products</span></div>
+      <div class="row">
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p1.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Nescafe Coffee</h3>
+              <p>$149 <strike>$200</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p2.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Morocan Coffee</h3>
+              <p>$189 <strike>$250</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p3.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Italian Coffee</h3>
+              <p>$49 <strike>$100</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p4.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Cafe n Tea Coffee</h3>
+              <p>$129 <strike>$200</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p5.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Costa Coffee</h3>
+              <p>$49 <strike>$120</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p6.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Kastu Coffee</h3>
+              <p>$199 <strike>$320</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p7.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Roasted Coffee</h3>
+              <p>$119 <strike>$200</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+          <div class="card">
+            <img src="Pic/p8.png" alt="Coffee1">
+            <div class="card-body">
+              <h3>Cothas Coffee</h3>
+              <p>$39 <strike>$100</strike></p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section  -->
+
+  <section id="gallery">
+    <div class="container">
+      <div class="top-heading">Our <span>Gallery</span></div>
+      <div class="row">
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image1.jpg" alt="Image">
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image2.jpg" alt="Image">
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image3.jpg" alt="Image">
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image4.jpg" alt="Image">
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image5.jpg" alt="Image">
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-6 col-12">
+          <div class="card">
+            <img src="Pic/Image6.jpg" alt="Image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section  -->
+
+  <section id="reviews">
+    <div class="container">
+      <div class="top-heading">Customer's <span>Reviews</span></div>
+    
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="card">
+            <i class="fa-solid fa-quote-right quotes"></i>
+            <div class="card-body">
+              <p>"Rich and bold, this black coffee has a deep, earthy flavor with a slightly smoky aftertaste. The aroma is invigorating, perfect for a morning pick-me-up. It's strong but not overpowering, with a smooth finish. A classic choice for those who appreciate simplicity in their brew."</p>
+            </div>
+            <div class="card-footer">
+              <img src="Pic/Kajal.jpg" alt="Customer">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <i class="fa-solid fa-quote-right quotes"></i>
+          <div class="card-body">
+            <p>"The affogato is a delightful mix of hot and cold, with the espresso perfectly melting into the creamy vanilla gelato. It's a sweet, indulgent treat that's more dessert than coffee. The espresso adds a robust bitterness that balances the sweetness beautifully."</p>
+          </div>
+          <div class="card-footer">
+            <img src="Pic/Akhil.jpg" alt="Customer">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <i class="fa-solid fa-quote-right quotes"></i>
+          <div class="card-body">
+            <p>"This Irish coffee is a perfect blend of strong coffee and a touch of sweetness from brown sugar. The whipped cream on top adds a luxurious texture and a cool contrast to the warm drink. It's a cozy, warming drink with a pleasant kick, ideal for a relaxing evening."</p>
+          </div>
+          <div class="card-footer">
+            <img src="Pic/Namita.jpg" alt="Customer">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <i class="fa-solid fa-quote-right quotes"></i>
+          <div class="card-body">
+            <p>"Rich and bold, the espresso packed a punch with its intense flavor and creamy crema. It had a robust aroma that making it a perfect pick-me-up. The slight bitterness was balanced with a touch of natural sweetness. It delivered a satisfying, energizing kick."</p>
+          </div>
+          <div class="card-footer">
+            <img src="Pic/Ram.jpg" alt="Customer">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <i class="fa-solid fa-quote-right quotes"></i>
+          <div class="card-body">
+            <p>"The flat white was smooth and velvety, with a perfect balance between the espresso and the steamed milk. The microfoam added a delicate texture, making each sip feel luxurious. Not too strong, not too milky, just right. A delightful choice for a leisurely morning."</p>
+          </div>
+          <div class="card-footer">
+          <img src="Pic/Keerthi.jpg" alt="Customer">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <i class="fa-solid fa-quote-right quotes"></i>
+          <div class="card-body">
+            <p>"Refreshingly smooth, the cold brew had a mellow, slightly sweet flavor with none of the bitterness of a hot brew. It was perfectly chilled, making it an ideal summer drink. It's a great option for those who prefer a lighter, more refreshing coffee experience."</p>
+          </div>
+          <div class="card-footer">
+            <img src="Pic/Virat.jpg" alt="Customer">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <!-- Contact Section  -->
+
+  <section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top-heading">Contact <span>Us</span></div>
+                <h5>Get in Touch</h5>
+                <p>Explore our <a href="#">Help Docs</a> or 
+                <br>Contact our Team.</p>
+                <input type="text" class="form-control" placeholder="Enter Your Name" aria-label="default input example" required>
+                <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="default input example" required>
+                <input type="number" class="form-control" placeholder="Enter Your Mobile No." aria-label="default input example" required>
+                <textarea name="message" class="form-control" cols="5" rows="2" placeholder="Enter Your Message" aria-label="default input example"></textarea>
+                <button class="btn">Send Message</button>
+            </div>
+
+            <div class="col-md-6" id="col">
+                <h1>Info</h1>
+                <p><i class="fa-regular fa-envelope"></i>coffeecaffe@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 1234567890</p>
+                <p><i class="fa-solid fa-building-columns"></i>Surat, Gujarat.</p>
+                <div class="detail">
+                <h6><i class="fa-solid fa-clock"></i>Opening Time : </h6>
+                <p><span>Monday To Friday</span> -> 11.00 AM To 10.00 PM
+                <br><span>Saturday - Sunday</span> -> 11.00 AM To 11.00 PM</p>
+            </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Blogs Section  -->
+
+  <section id="blogs">
+    <div class="container">
+      <div class="top-heading">Latest <span>Blogs</span></div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Pic/b1.jpg" alt="Blogs">
+            <div class="card-body">
+              <h4>Tasty and Refreshing Coffee</h4>
+              <h6>By Admin / 1 September 2024</h6>
+              <p>Rich and bold, this black coffee has a deep, earthy flavor with a slightly smoky aftertaste. The aroma is invigorating, perfect for a morning pick-me-up. It's strong but not overpowering, with a smooth finish.</p>
+              <button class="btn">Read More.</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Pic/b2.jpg" alt="Blogs">
+            <div class="card-body">
+              <h4>Is It Okay to Drink Instant Coffee Every Day?</h4>
+              <h6>By Admin / 3 June 2024</h6>
+              <p>Instant coffee is convenient and fast. But is it a good idea to rely on it every single day? People have all kinds of opinions about it; honestly, it's easy to see why. Some see it as a lifesaver; others turn their noses up at the mere thought of it.</p>
+              <button class="btn">Read More.</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Pic/b3.jpg" alt="Blogs">
+            <div class="card-body">
+              <h4>Recipes & Hacks for Filter Coffee Mix</h4>
+              <h6>By Admin / 8 November 2023</h6>
+              <p>Crafting the perfect filter coffee doesn't have to be complicated, but it does require attention to detail and the right techniques. This blog will guide you through recipes and hacks for making a filter coffee mix.</p>
+              <button class="btn">Read More.</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section  -->
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12 logo">
+          <img src="Pic/logo.png" alt="Logo">
+        </div>
+        <div class="col-md-12">
+          <div class="social-links">
+            <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+            <a href="https://telegram.org/"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <h5>Designed By <a href="#" class="text-decoration-none"><span class="text-black">Meet Savani</span></a></h5>
+          <p>&#169; Copyright <strong class="fw-bold">Meet's Cafe.</strong> All Rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="arrow position-fixed text-center"><i><img src="Pic/up-arrow.png" alt="" width="50px"></i></a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
